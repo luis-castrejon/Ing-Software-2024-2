@@ -1,8 +1,8 @@
 create database lab_ing_software;
 
-create user 'lab'@'localhost' identified by 'Developer123!';
+create user 'luis'@'localhost' identified by 'Developer123!';
 
-grant all privileges on lab_ing_software.* to 'lab'@'localhost'
+grant all privileges on lab_ing_software.* to 'luis'@'localhost'
 with grant option;
 
 use lab_ing_software;
