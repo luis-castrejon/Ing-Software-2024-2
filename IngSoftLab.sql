@@ -18,7 +18,7 @@ CREATE TABLE `usuarios` (
   `superUser` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`idUsuario`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE TABLE `peliculas` (
   `idPelicula` int NOT NULL AUTO_INCREMENT,
@@ -36,9 +36,10 @@ CREATE TABLE `rentar` (
   `fecha_renta` datetime NOT NULL,
   `dias_de_renta` int DEFAULT '5',
   `estatus` tinyint DEFAULT '0',
+  `fecha_devolucion` datetime DEFAULT NULL,
   PRIMARY KEY (`idRentar`),
   KEY `idUsuario_idx` (`idUsuario`),
   KEY `idPelicula_idx` (`idPelicula`),
   CONSTRAINT `idPelicula` FOREIGN KEY (`idPelicula`) REFERENCES `peliculas` (`idPelicula`),
   CONSTRAINT `idUsuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`idUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
